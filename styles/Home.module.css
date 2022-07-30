@@ -1,0 +1,57 @@
+
+.container {
+  padding: 0 2rem;
+  display: grid;
+  place-items: center;
+  max-width: 100vw;
+  height: 100vh;
+
+  font-size: 16px;
+}
+
+.qrId {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+
+.qrId h1{
+  font-size: 1.5rem;
+  margin:0;
+}
+
+.qrId input {
+  padding: 0.5em;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 5px;
+}
+
+.qrId button {
+  border: none;
+  padding: 0.5em;
+  background-color: lightblue;
+  color:black;
+  border-radius: 5px;
+  font-size: 1.25em;
+  cursor: pointer;
+}
+
+.qrId button:hover {
+  background-color: darkcyan;
+}
+
+.qrBox {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em
+}
+
+.qrBox button {
+  padding: 1em 4em;
+}
