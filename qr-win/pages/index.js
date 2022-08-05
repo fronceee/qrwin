@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import styles from '../styles/Home.module.css'
 import generatePayload from 'promptpay-qr'
 import { useAppContext } from "../context"
@@ -12,10 +12,11 @@ export default function Home() {
   const setContextId = useAppContext().setId
   const currentPrice = useAppContext().currentPrice
   const prices = useAppContext().prices
-  const [ppId, setPpId] = useState(contextId)
+  const [ppId, setPpId] = useState("")
   const [isIdFilled, setIsIdFilled] = useState(false)
   const [qr, setQr] = useState("")
 
+  console.log(ppId)
   const renderedCards = prices.map(data => {
     return (
       <PriceCard 
@@ -26,17 +27,23 @@ export default function Home() {
       </PriceCard>
     )
   })
+
+  useEffect(() => {
+    if (contextId.length > 0) {
+      setPpId(contextId)
+      console.log("checked!")
+    }
+  },[isIdFilled])
   
   
   function handleOnChange(e) {
     setPpId(e.target.value)
-    setContextId(ppId)
   }
 
+
   function handleSubmit(e) {
-    function checkAmount(price) {
-    }
     e.preventDefault()
+    setContextId(ppId)
     if (ppId === "") (
       alert("Please Enter your ID!")
     );
@@ -55,6 +62,8 @@ export default function Home() {
 
   return isIdFilled ? (
     <div className={styles.qrBox}>
+      <h1>{ppId}</h1>
+      <h2>Amount: {currentPrice}</h2>
       <img src={qr}/>
       <button onClick={() => {
         setPpId("")

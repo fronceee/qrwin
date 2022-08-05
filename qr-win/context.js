@@ -4,7 +4,7 @@ const appContext = createContext()
 
 export function AppWrapper(props) {
 
-    const [ppId, setPpId] = useState("test")
+    const [ppId, setPpId] = useState("")
     const [prices, setPrices] = useState([
         15, 20, 25, 30, 35, 40, 45, 50, 55, 60
     ])
