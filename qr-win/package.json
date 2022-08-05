@@ -15,7 +15,8 @@
     "qr-image": "^3.2.0",
     "qrcode": "^1.5.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "eslint": "8.20.0",

@@ -55,3 +55,26 @@
 .qrBox button {
   padding: 1em 4em;
 }
+
+.pricecard {
+  background-color: rgb(61, 157, 61);
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  font-size: 1.8em;
+  border-radius: 5px;
+}
+
+.selectedCard {
+  cursor: pointer;
+  background-color:rgb(3, 39, 3)
+}
+
+
+.cardHolder {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap:1.25em;
+  margin-bottom: 1em;
+}
